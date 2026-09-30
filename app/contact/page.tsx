@@ -11,7 +11,7 @@ import { photo, SITE } from '@/lib/site'
 
 export const metadata = pageMeta({
   title: 'Green Leaf Residency | Contact',
-  description: 'Contact Green Leaf Residency, Sector 15 Part 2, Gurugram — call 84470 16044, WhatsApp us, send an enquiry or get directions to our location.',
+  description: 'Contact Green Leaf Residency, Sector 15 Part 2, Gurugram — call 98707 49849, WhatsApp us, send an enquiry or get directions to our location.',
   path: '/contact',
   image: '/images/img-7041.jpg',
 })

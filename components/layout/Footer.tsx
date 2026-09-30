@@ -91,6 +91,9 @@ export function Footer() {
                 </li>
               ))}
               <li className="pt-2">
+                <FooterLink href={SITE.directions}>{SITE.region}</FooterLink>
+              </li>
+              <li>
                 <FooterLink href={`mailto:${SITE.email}`}>
                   <span className="break-words">{SITE.email}</span>
                 </FooterLink>
