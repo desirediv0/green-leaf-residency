@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-forest: #0f4d32;
+  --color-forest-deep: #0a3623;
+  --color-leaf: #4f7d32;
+  --color-olive: #829b55;
+  --color-ivory: #f7f5ec;
+  --color-cream: #eeebdd;
+  --color-sage: #d3e2b6;
+  --color-ink: #18241e;
+  --color-muted: #68736c;
+  --color-line: #d8d9c8;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), Georgia, 'Times New Roman', serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ivory font-sans text-ink antialiased;
+    overflow-x: clip;
+  }
+  .font-display {
+    font-variant-numeric: lining-nums;
+  }
+  ::selection {
+    @apply bg-forest text-ivory;
+  }
+}
+
+/* Slim branded scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #4f7d32 #eeebdd;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eeebdd;
+}
+::-webkit-scrollbar-thumb {
+  background: #4f7d32;
+  border: 2px solid #eeebdd;
+  border-radius: 999px;
+}
+
+/*
+ * GSAP entrance states. The `js` class is added by an inline script in <head>,
+ * so content is only hidden when the animations that reveal it can run.
+ * Nothing is hidden for users who prefer reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-r],
+  .js [data-hero] {
+    opacity: 0;
+  }
+  .js [data-clip] {
+    opacity: 0;
+    clip-path: inset(12% 12% 12% 12%);
+  }
+  .js [data-line],
+  .js [data-word],
+  .js [data-grow] {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
